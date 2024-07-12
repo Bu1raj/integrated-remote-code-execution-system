@@ -19,6 +19,8 @@ const config = {
     },
     extend: {
       colors: {
+        activeBorderColor: '#83B4FF',
+        subtleBackground: '#131823',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -39,6 +41,7 @@ const config = {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+          light: '#161c29',
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",

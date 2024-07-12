@@ -46,13 +46,11 @@ const Page = ({params}:{params:{questionId:string}}) => {
         className="rounded-lg border relative bottom-12"  
       >
         <ResizablePanel defaultSize={40} className='h-[100vh]'>
-        <Tabs defaultValue="Questions" className="w-full pl-2 pr-2 rounded-xl pt-12">
-            <TabsList className="grid w-full grid-cols-3 rounded-xl">
-             
+        <Tabs defaultValue="Questions" className="w-full mt-14">
+            <TabsList className="grid w-full grid-cols-2 pr-5">
              <TabsTrigger value="Questions">Questions</TabsTrigger>
              <TabsTrigger value="Submissions">Submissions</TabsTrigger>
-             <TabsTrigger value="Discussion">Discussion</TabsTrigger>
-          
+             {/* <TabsTrigger value="Discussion">Discussion</TabsTrigger> */}
             </TabsList>
             
             <TabsContent value='Questions' className='w-[100%] h-[90vh]'>

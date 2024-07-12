@@ -1,7 +1,4 @@
-import Image from "next/image";
 import CodingPage from "./CodingPlatform/CodingPage";
-
-
 export default function Home() {
   return (
     <main>

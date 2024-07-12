@@ -13,7 +13,7 @@ import {
 export function SelectMenu({topic , options , setState}: {topic:string , options:string[] , setState: Function}) {
   return (
     <Select onValueChange={(value)=> setState(value)}>
-      <SelectTrigger className="w-[180px] rounded-xl">
+      <SelectTrigger className="w-[180px] rounded">
         <SelectValue placeholder={`Select ${topic}`} />
       </SelectTrigger>
       <SelectContent>
