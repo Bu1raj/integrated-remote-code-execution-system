@@ -18,8 +18,8 @@ const CodeEditor = ({config , questionId , setMessage , setLoading , loading}:{c
     
   return (
     
-    <div className='flex gap-2 pt-12 pl-5 h-full w-full flex-col'>
-        <div className='flex justify-between mr-5 mt-2'>
+    <div className='flex gap-2 pl-3 h-full w-full flex-col'>
+        <div className='flex justify-between mr-5 pt-1  '>
             <SelectMenu topic='language' options={["c", "cpp" , "javascript" , "python"]} setState={setLanguage}/>
             <div className='flex gap-2 items-center'>
                 <button className='border border-[#83B4FF] font-semibold rounded w-24 h-9 transition duration-300 ease-in-out hover:bg-[#83B4FF] hover:text-background'>Run</button>

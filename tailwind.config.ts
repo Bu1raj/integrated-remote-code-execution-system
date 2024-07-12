@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      boxShadow:{
+        'inner': 'inset 0 -5px 25px 0px rgba(131, 180, 255, 0.1)',
+        'innerOnHover': 'inset 0 0px 25px 0px rgba(131, 180, 255, 0.1)',
+      },
       colors: {
         activeBorderColor: '#83B4FF',
         subtleBackground: '#131823',
