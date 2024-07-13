@@ -26,7 +26,11 @@ const Page = ({params}:{params:{questionId:string}}) => {
     const [message, setMessage] = useState<any>(null);
     const [ loading , setLoading] = useState<boolean>(false);
 
+    const [output, setOutput] = React.useState<any>('Brother, I am empty');
 
+    const onSubmission = (result: any) => {
+      setOutput(result);
+    };
 
     useEffect(()=>{
 
@@ -67,11 +71,11 @@ const Page = ({params}:{params:{questionId:string}}) => {
           <ResizablePanel defaultSize={70}>
             <ResizablePanelGroup direction="vertical" className='mt-2'>
               <ResizablePanel defaultSize={50}>
-                  <CodeEditor config={question?.config} questionId={question?.id} setMessage={setMessage} setLoading={setLoading} loading={loading}/>
+                  <CodeEditor onSubmit={onSubmission} config={question?.config} questionId={question?.id} setMessage={setMessage} setLoading={setLoading} loading={loading}/>
               </ResizablePanel>
               <ResizableHandle withHandle />
               <ResizablePanel defaultSize={40}>
-                <OutputBox examples={question?.examples} message={message} loading = {loading}/>
+                <OutputBox examples={question?.examples} message={output} loading = {loading}/>
               </ResizablePanel>
             </ResizablePanelGroup>
           </ResizablePanel>

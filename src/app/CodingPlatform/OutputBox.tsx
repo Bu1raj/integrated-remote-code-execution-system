@@ -6,6 +6,7 @@ import { Separator } from "@radix-ui/react-separator";
 
 const OutputBox = ({
   examples,
+  message,
   loading,
 }: {
   examples: any;
@@ -15,7 +16,6 @@ const OutputBox = ({
   if (!examples || loading) {
     return <Skeleton className="h-[80%] w-full p-2" />;
   }
-
   return (
     <div className="p-3 w-full">
       {
@@ -48,7 +48,7 @@ const OutputBox = ({
                 <div className="flex flex-col gap-2">
                   <p className="font-semibold">Output:</p>
                   <p className="w-fit  p-2 rounded-md">
-                    {example.output}
+                    {message}
                   </p>
                 </div>
               </div>
