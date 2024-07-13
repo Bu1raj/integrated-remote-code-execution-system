@@ -14,11 +14,10 @@ export function SelectMenu({topic , options , setState}: {topic:string , options
   return (
     <Select onValueChange={(value)=> setState(value)}>
       <SelectTrigger className="w-[180px] rounded">
-        <SelectValue placeholder={`Select ${topic}`} />
+        <SelectValue placeholder={`${options[0]}`} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>{topic}</SelectLabel>
             {
                 options.map((option , index) => (
                     <SelectItem key={index} value={option}>{option}</SelectItem>

@@ -1,10 +1,11 @@
 import { SelectMenu } from '@/components/SelectMenu'
 import React ,  {useState , useEffect, useRef} from 'react'
 import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react';
-import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
 
+
 const CodeEditor = ({config , questionId , setMessage , setLoading , loading}:{config:any , questionId:string , setMessage: Function , setLoading:Function , loading:boolean}) => {
+
 
     const [language , setLanguage] = React.useState<string>('c')
     const [theme , setTheme] = React.useState<string>('vs-dark')
@@ -15,6 +16,15 @@ const CodeEditor = ({config , questionId , setMessage , setLoading , loading}:{c
         editorRef.current = editor;
         editor.focus();
     }
+
+    /*useEffect(()=>{
+         console.log(code);
+     },[code])*/
+
+    const RunCode = () =>{
+        //ADD API LOGIC LATER
+        console.log(code);
+    }
     
   return (
     
@@ -22,7 +32,7 @@ const CodeEditor = ({config , questionId , setMessage , setLoading , loading}:{c
         <div className='flex justify-between mr-5 mt-2'>
             <SelectMenu topic='language' options={["c", "cpp" , "javascript" , "python"]} setState={setLanguage}/>
             <div className='flex gap-2 items-center'>
-                <button className='border border-[#83B4FF] font-semibold rounded w-24 h-9 transition duration-300 ease-in-out hover:bg-[#83B4FF] hover:text-background'>Run</button>
+                <button className='border border-[#83B4FF] font-semibold rounded w-24 h-9 transition duration-300 ease-in-out hover:bg-[#83B4FF] hover:text-background' onClick={RunCode}>Run</button>
                 <button className='border border-[#83B4FF] font-semibold rounded w-24 h-9 transition duration-300 ease-in-out hover:bg-[#83B4FF] hover:text-background'>Submit</button>
             </div>
         </div>

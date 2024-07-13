@@ -15,7 +15,7 @@ import {
   } from "@/components/ui/tabs"
 import CodeEditor from './CodeEditor';
 import OutputBox from './OutputBox';
-import { questions } from '../constants';
+import { questions } from '../constants'; 
 
 const Page = ({params}:{params:{questionId:string}}) => {
 
