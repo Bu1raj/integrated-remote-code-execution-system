@@ -20,25 +20,31 @@ const CodeEditor = ({config , questionId , setMessage , setLoading , loading, on
      },[code])*/
 
     const RunCode = async () =>{
-      console.log(language);
-        try {
-            const response = await fetch('/api/executeCode', {
-              method: 'POST',
-              headers: {
+        const requestBody = {
+            code: code,
+            language: language
+        };
+        console.log(requestBody);
+        // Send a POST request to your backend
+        fetch('http://localhost:8080/execute', {
+            method: 'POST',
+            headers: {
                 'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ code, language }),
-            });
-            
-            const data = await response.json();
-            if (response.ok) {
-              console.log('Result:', data.result);
-            } else {
-              console.error('Error:', data.error);
-            }
-          } catch (error) {
-            console.error('Request failed:', error);
-          }
+            },
+            body: JSON.stringify(requestBody),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Response from server:', data);
+            // Handle the response from the server
+            // Example: Update UI with output or handle errors
+            onSubmit(data.output);
+        })
+        .catch(error => {
+            console.error('Error sending request:', error);
+            // Handle error scenarios
+        });
+        console.log(code);
     }
     
     return (
