@@ -43,7 +43,7 @@ const Page = ({params}:{params:{questionId:string}}) => {
   return (
     <div className='w-[100vw] h-[100vh] overflow-hidden'>
         <Navbar />
-        <div className='overflow-hidden h-[calc(100vh-<NavbarHeight>)]'>
+        <div className='overflow-hidden h-[calc(100vh-3.5rem)]'>
           <ResizablePanelGroup
           direction="horizontal"
           className="border relative h-full"
