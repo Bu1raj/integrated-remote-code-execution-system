@@ -16,6 +16,7 @@ import {
 import CodeEditor from './CodeEditor';
 import OutputBox from './OutputBox';
 import { questions } from '../constants';
+import Navbar from '@/components/Navbar/Navbar';
 
 const Page = ({params}:{params:{questionId:string}}) => {
 
