@@ -56,7 +56,7 @@ const CodeEditor = ({config , questionId , setMessage , setLoading , loading, on
                     <Editor
                     language="c"
                     value={config[language].value}
-                    onChange={(value)=>setCode(value)}
+                    onChange={(value: string | undefined) => setCode(value || "")}
                     theme={theme}
                     onMount={onMount}
                     />
