@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useEffect , useState } from 'react'
 import {
     ResizableHandle,
@@ -15,35 +14,36 @@ import {
   } from "@/components/ui/tabs"
 import CodeEditor from './CodeEditor';
 import OutputBox from './OutputBox';
-import { questions } from '../constants';
-import Navbar from '@/components/Navbar/Navbar';
+import Navbar from '@/components/Navbars/CodingPageNavbar';
+import { useSearchParams } from 'next/navigation';
+import { experimentsList } from '../constants';
 
-const Page = ({params}:{params:{questionId:string}}) => {
+type CodingPageProps = {
+};
+const CodingPage:React.FC<CodingPageProps> = () => {
+  const searchParams = useSearchParams();
+  const questionId = searchParams?.get('questionId');
 
-    const {questionId} = params;
+  const [question , setQuestion] = useState<any>();
+  const [message, setMessage] = useState<any>(null);
+  const [ loading , setLoading] = useState<boolean>(false);
+  const [output, setOutput] = React.useState<any>('Brother, I am empty');
 
-    const [question , setQuestion] = useState<any>();
-    const [message, setMessage] = useState<any>(null);
-    const [ loading , setLoading] = useState<boolean>(false);
+  useEffect(()=>{
+    if(questionId){
+      const question = experimentsList.find((experiment)=>experiment.id === questionId);
+      setQuestion(question);
+    }
+  }, []);
 
-    const [output, setOutput] = React.useState<any>('Brother, I am empty');
+  const onSubmission = (result: any) => {
+    setOutput(result);
+  };
 
-    const onSubmission = (result: any) => {
-      setOutput(result);
-    };
+  if(!question){
+    return <div>Loading...</div>
+  }
 
-    useEffect(()=>{
-
-        const fetchQuestion = async()=>{
-            const question = questions;
-            setQuestion(question);
-        }
-
-        fetchQuestion();
-
-    } , []);
-
-    
   return (
     <div className='w-[100vw] h-[100vh] overflow-hidden'>
         <Navbar />
@@ -85,4 +85,4 @@ const Page = ({params}:{params:{questionId:string}}) => {
   )
 }
 
-export default Page
+export default CodingPage;

@@ -77,4 +77,4 @@ const CodeEditor = ({config , questionId , setMessage , setLoading , loading, on
         </div>
     )
 }
-export default CodeEditor
+export default CodeEditor;

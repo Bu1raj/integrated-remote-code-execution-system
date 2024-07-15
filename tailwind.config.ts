@@ -19,8 +19,12 @@ const config = {
     },
     extend: {
       boxShadow:{
-        'inner': 'inset 0 -5px 25px 0px rgba(131, 180, 255, 0.1)',
+        'inner': 'inset 0 -5px 25px 0px rgba(131, 180, 255, 0.2)',
         'innerOnHover': 'inset 0 0px 25px 0px rgba(131, 180, 255, 0.1)',
+        'glow': '0 0 20px 3px rgba(131, 180, 255, 0.3)',
+      },
+      backgroundSize: {
+        '300%': '300%',
       },
       colors: {
         activeBorderColor: '#83B4FF',
@@ -74,10 +78,24 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        'border-spin-left': {
+          '100%': { transform: 'rotate(-180deg)'},
+        },
+        'border-spin-right': {
+          '100%': { transform: 'rotate(0deg)' },
+        },
+        animatedgradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        'border-spin-left': 'border-spin-left 1s ease-in-out infinite',
+        'border-spin-right': 'border-spin-right 1s ease-in-out infinite',
+        'gradient': 'animatedgradient 5s ease infinite alternate'
       },
     },
   },

@@ -1,12 +1,10 @@
-import CodingPage from "./CodingPlatform/CodingPage";
+import React from 'react';
+import ExperimentsPage from './experiments/page';
+
 export default function Home() {
   return (
     <main>
-      <div>
-        <CodingPage params={{
-          questionId: "1"
-        }}></CodingPage>
-      </div>
+      <ExperimentsPage />
     </main>
   );
 }
