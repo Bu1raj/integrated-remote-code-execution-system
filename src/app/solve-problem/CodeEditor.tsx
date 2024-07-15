@@ -18,7 +18,6 @@ const CodeEditor = ({config , questionId , setMessage , setLoading , loading, on
     /*useEffect(()=>{
          console.log(code);
      },[code])*/
-
     const RunCode = async () =>{
         const requestBody = {
             code: code,
