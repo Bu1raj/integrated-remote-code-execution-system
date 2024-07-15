@@ -7,7 +7,7 @@ import {
     AccordionTrigger,
   } from "@/components/ui/accordion"
 import { Separator } from '@/components/ui/separator'
-import { ScrollArea } from '@radix-ui/react-scroll-area'
+// import { ScrollArea } from '@radix-ui/react-scroll-area'
 
 const QuestionPage = ({question}:{question:any}) => {
 
@@ -18,7 +18,7 @@ const QuestionPage = ({question}:{question:any}) => {
     }
 
   return (
-        <div className='pl-2 pr-4 pt-3 flex flex-col gap-5 overflow-x-hidden h-[90vh] overflow-scroll pb-12'>
+        <div className='pl-4 pr-4 pt-3 flex flex-col gap-5 overflow-x-hidden h-[90vh] overflow-scroll pb-12'>
 
             <div>
                 <p className='font-bold text-3xl'>{question.title}</p>
@@ -65,13 +65,13 @@ const QuestionPage = ({question}:{question:any}) => {
                     <AccordionItem value="item-1">
                         <AccordionTrigger className='text-gray-500'>Topics</AccordionTrigger>
                         <AccordionContent>
-                        <div className='flex gap-2'>
+                        {/* <div className='flex gap-2'>
                         {
                             question.tags.map((tag:any)=>(
                                 <span key={tag.id} className='text-gray-100 bg-gray-500 rounded-md p-1'>{tag.name}</span>
                             ))
                         }
-                        </div>
+                        </div> */}
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
@@ -80,4 +80,4 @@ const QuestionPage = ({question}:{question:any}) => {
   )
 }
 
-export default QuestionPage
+export default QuestionPage;
