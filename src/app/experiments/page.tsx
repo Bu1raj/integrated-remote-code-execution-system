@@ -28,6 +28,12 @@ const ExperimentsPage:React.FC<experimentsPageProps> = () => {
         );
     }
 
+    function handleVivaVoceClick(){
+        router.push(
+            '/viva-voce',
+        );
+    }
+
     return(
         <>
             <StandardNavbar />
@@ -50,7 +56,7 @@ const ExperimentsPage:React.FC<experimentsPageProps> = () => {
                                             Solve problem
                                             <IoMdArrowDropright fill='black'/>
                                         </button>
-                                        <button className='bg-[#FDFFE2] px-2 py-1 rounded shadow-lg flex items-center gap-2 hover:bg-[#FDFFE2E6]'>
+                                        <button onClick={handleVivaVoceClick} className='bg-[#FDFFE2] px-2 py-1 rounded shadow-lg flex items-center gap-2 hover:bg-[#FDFFE2E6]'>
                                             Viva Voce
                                             <IoMdArrowDropright fill='black'/>
                                         </button>
